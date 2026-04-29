@@ -14,8 +14,8 @@ class Settings:
 
 
 def get_settings() -> Settings:
-    bot_token = os.getenv("BOT_TOKEN")
-    database_url = os.getenv("DATABASE_URL")
+    bot_token = os.getenv("BOT_TOKEN", "").strip()
+    database_url = os.getenv("DATABASE_URL", "").strip()
 
     if not bot_token:
         raise RuntimeError("BOT_TOKEN environment variable is required")
